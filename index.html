@@ -4,5 +4,17 @@
 </head>
 <body>
 	<h1>Publishing website via github</h1>
+	<div id="banner-message">Some div</div>
+	<button type="button">Hide/Show</button>
+	<script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		var hiddenBox = $("#banner-message");
+		$("button").on("click", function(event){
+			hiddenBox.show();
+		});
+		$("button").on("dblclick", function(event){
+			hiddenBox.hide();
+		});
+	</script>
 </body>
 </html>
