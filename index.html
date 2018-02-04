@@ -31,7 +31,7 @@
 			req.addEventListener("load", function(){
 				console.log('Status da request: ' + req.status);
 				//var jsonObject = JSON.parse(req.responseText);
-				document.getElementById("resposta").innerHTML = req.responseText; 
+				document.getElementById("resposta").innerHTML = req.responseText;
 			});
 			req.send(null);
 		});
