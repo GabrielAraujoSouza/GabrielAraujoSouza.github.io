@@ -8,7 +8,7 @@
 	<div id="banner-message">Some div</div>
 	<button type="button">Hide</button>
 	<div id="resposta"></div>
-	<input type="button" value="Get JSON"/>
+	<input type="button" id="json" value="Get JSON"/>
 	<script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
 	<script type="text/javascript">
@@ -23,10 +23,18 @@
 		});
 	</script>
 	<script type="text/javascript">
-		var req = new XMLHttpRequest();
-		req.open("get", "https://aliens-abduction.herokuapp.com/json.php", true);
-		req.onload = function(){console.log(this.responseText);};
-		req.send();
+		$("#json").on("click", function(){
+			console.log('click');
+			var req = new XMLHttpRequest();
+			req.open("get", "https://aliens-abduction.herokuapp.com/json.php", true);
+			//req.setRequestHeader('Access-Control-Allow-Origin', 'https://aliens-abduction.herokuapp.com/json.php');
+			req.addEventListener("load", function(){
+				console.log('Status da request: ' + req.status);
+				//var jsonObject = JSON.parse(req.responseText);
+				document.getElementById("resposta").innerHTML = req.responseText; 
+			});
+			req.send(null);
+		});
 	</script>
 </body>
 </html>
