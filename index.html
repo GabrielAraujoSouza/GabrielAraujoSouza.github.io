@@ -6,17 +6,27 @@
 <body>
 	<h1>Publishing website via github</h1>
 	<div id="banner-message">Some div</div>
-	<button type="button">Hide/Show</button>
+	<button type="button">Hide</button>
+	<div id="resposta"></div>
+	<input type="button" value="Get JSON"/>
 	<script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
 	<script type="text/javascript">
 		var hiddenBox = $("#banner-message");
 		$("button").on("click", function(event){
 			hiddenBox.show();
+			$("button").html("Hide");
 		});
 		$("button").on("dblclick", function(event){
 			hiddenBox.hide();
+			$("button").html("Show");
 		});
+	</script>
+	<script type="text/javascript">
+		var req = new XMLHttpRequest();
+		req.open("get", "https://aliens-abduction.herokuapp.com/json.php", true);
+		req.onload(console.log(this.responseText));
+		req.send();
 	</script>
 </body>
 </html>
