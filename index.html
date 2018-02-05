@@ -67,7 +67,7 @@
 		});
 		
 		$("#recap").submit(function(e){
-			//e.preventDefault();
+			e.preventDefault();
 			$.ajax({
 				type: "post",
 				url: $("form").attr('action'),
