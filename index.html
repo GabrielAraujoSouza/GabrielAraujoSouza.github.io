@@ -3,24 +3,41 @@
 <head>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<title>Publishing</title>
-	<script type="text/javascript">
-		
-	</script>
 </head>
 <body class="container">
-	<h1>Publishing website via github</h1>
-	<div id="banner-message">Some div</div>
-	<button type="button">Hide</button>
-	<div id="resposta"></div>
-	<input type="button" id="json" value="Get JSON"/>
-	<hr/>
-	<div id="result"></div>
-	<h3>Submiting form with recaptcha</h3>
-	<form method="post" id="recap" action="https://aliens-abduction.herokuapp.com/recaptcha.php">
-		<div id="div-recap"></div> 
-		<!--class="g-recaptcha" data-sitekey="6Lf-R0QUAAAAAP5Dl3AtIqFj4zFfHtu0Anm-vyuJ"></div>-->
-		<input type="submit" value="Submit"/>
-	</form>
+	<div class="container border">
+		<h1>Publishing website via github</h1>
+		<div id="banner-message">Some div</div>
+		<button type="button">Hide</button>
+		<div id="resposta"></div>
+		<input type="button" id="json" value="Get JSON"/>
+	</div>
+	
+	<hr class="border border-white"/>
+	
+	<div class="container border">
+		<form method="post" id="recap" action="https://aliens-abduction.herokuapp.com/recaptcha.php">
+			<div class="row">
+				<div class="col-lg" >
+					<h3 class="text-primary">Submiting form with recaptcha</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg" id="result"></div>
+			</div>
+			<div class="row">
+				<div class="col-lg">
+					<div id="div-recap"></div> 
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg">
+					<input type="submit" value="Submit" class="btn btn-success"/>
+				</div>
+			</div>
+			<!--class="g-recaptcha" data-sitekey="6Lf-R0QUAAAAAP5Dl3AtIqFj4zFfHtu0Anm-vyuJ"></div>-->
+		</form>
+	</div>
 	<script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
 	<script type="text/javascript" src='https://www.google.com/recaptcha/api.js?hl=pt-BR'></script>
