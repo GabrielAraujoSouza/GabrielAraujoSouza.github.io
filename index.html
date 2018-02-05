@@ -80,9 +80,11 @@
 				data: $("form").serialize(),
 				success: function(response){
 					$("#result").html(response);
+					$("#result").removeClass('alert-danger');
 					$("#result").addClass('alert-success');
 				},
 				error: function(data){
+					$("#result").removeClass('alert-success');
 					$("#result").addClass('alert-danger');
 					console.log("some error occored", data);
 				}
