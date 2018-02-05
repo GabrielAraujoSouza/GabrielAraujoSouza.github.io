@@ -14,7 +14,7 @@
 	<div id="result"></div>
 	<h3>Submiting form with recaptcha</h3>
 	<form method="post" id="recap" action="https://aliens-abduction.herokuapp.com/recaptcha.php">
-		<div class="g-recaptcha" data-sitekey="6Lf-R0QUAAAAAP5Dl3AtIqFj4zFfHtu0Anm-vyuJ"></div>
+		<div id="div-recap" class="g-recaptcha" data-sitekey="6Lf-R0QUAAAAAP5Dl3AtIqFj4zFfHtu0Anm-vyuJ"></div>
 		<input type="submit" value="Submit"/>
 	</form>
 	<script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
@@ -60,6 +60,15 @@
 			});
 			
 		});
+		
+		var onloadCallback = function() {
+			grecaptcha.render('div-recap', {
+			  'data-sitekey' : '6Lf-R0QUAAAAAP5Dl3AtIqFj4zFfHtu0Anm-vyuJ'
+			});
+      };
+	</script>
+	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit">
+		async defer
 	</script>
 </body>
 </html>
