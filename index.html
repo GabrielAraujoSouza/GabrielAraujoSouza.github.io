@@ -80,12 +80,15 @@
 				data: $("form").serialize(),
 				success: function(response){
 					$("#result").html(response);
-					$("#result").removeClass('alert-danger');
-					$("#result").addClass('alert-success');
+					if(JSON.parse(response).resposta == "sucesso"){
+						$("#result").removeClass('alert-danger');
+						$("#result").addClass('alert-success');
+					}else{
+						$("#result").removeClass('alert-success');
+						$("#result").addClass('alert-danger');
+					}					
 				},
 				error: function(data){
-					$("#result").removeClass('alert-success');
-					$("#result").addClass('alert-danger');
 					console.log("some error occored", data);
 				}
 			});
