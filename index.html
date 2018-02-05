@@ -51,9 +51,9 @@
 				data: $("form").serialize(),
 				success: function(response){
 					$("#result").html(response);
-				}
-				error: function(){
-					console.log("some error occored");
+				},
+				error: function(data){
+					console.log("some error occored", data);
 				}
 			});
 			e.preventDefault();
