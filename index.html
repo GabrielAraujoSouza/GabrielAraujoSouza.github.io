@@ -49,7 +49,7 @@
 			$.ajax({
 				type: "post",
 				url: $("form").attr('action'),
-				data: $("form").serialize(),
+				//data: $("form").serialize(),
 				success: function(response){
 					$("#result").html(response);
 				},
