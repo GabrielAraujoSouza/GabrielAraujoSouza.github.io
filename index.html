@@ -10,6 +10,7 @@
 	<div id="resposta"></div>
 	<input type="button" id="json" value="Get JSON"/>
 	<hr/>
+	<div id="result"></div>
 	<h3>Submiting form with recaptcha</h3>
 	<form method="post" action="https://aliens-abduction.herokuapp.com/recaptcha.php">
 		<div class="g-recaptcha" data-sitekey="6Lf-R0QUAAAAAP5Dl3AtIqFj4zFfHtu0Anm-vyuJ"></div>
@@ -41,6 +42,20 @@
 				document.getElementById("resposta").innerHTML = req.responseText;
 			});
 			req.send(null);
+		});
+		
+		$("input.submit").click(function(){
+			$.ajax({
+				type: "post",
+				url: $("form").attr('action');
+				data: $("form").serialize(),
+				success: function(response){
+					$("#result").html(response);
+				}
+				error: function(){
+					console.log("some error occored");
+				}
+			});
 		});
 	</script>
 </body>
