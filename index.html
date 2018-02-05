@@ -83,9 +83,12 @@
 		
 		var onloadCallback = function() {
 			grecaptcha.render('div-recap', {
-			  'sitekey' : '6Lf-R0QUAAAAAP5Dl3AtIqFj4zFfHtu0Anm-vyuJ'
+			  'sitekey' : '6Lf-R0QUAAAAAP5Dl3AtIqFj4zFfHtu0Anm-vyuJ', 'expired-callback', expCallback()
 			});
 		};
+		var expCallback = function() {
+          grecaptcha.reset();
+       };
 	</script>
 	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit">
 		async defer
