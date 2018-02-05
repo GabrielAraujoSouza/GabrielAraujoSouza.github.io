@@ -80,7 +80,7 @@
 				data: $("form").serialize(),
 				success: function(response){
 					$("#result").html(response);
-					console.log(SON.parse(response).resposta);
+					console.log(JSON.parse(response).resposta);
 					if(JSON.parse(response).resposta == "sucesso"){
 						$("#result").removeClass('alert-danger');
 						$("#result").addClass('alert-success');
