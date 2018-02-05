@@ -81,15 +81,16 @@
 					console.log("some error occored", data);
 				}
 			});
+			expCallback();
 		});
 		
 		var onloadCallback = function() {
-			var expire = grecaptcha.render('div-recap', {
+			grecaptcha.render('div-recap', {
 			  'sitekey' : '6Lf-R0QUAAAAAP5Dl3AtIqFj4zFfHtu0Anm-vyuJ'
 			});
 		};
-		var expCallback = function(expire) {
-          grecaptcha.reset(expire);
+		var expCallback = function() {
+          grecaptcha.reset();
        };
 	</script>
 	
