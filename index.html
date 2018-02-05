@@ -4,11 +4,7 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<title>Publishing</title>
 	<script type="text/javascript">
-		var onloadCallback = function() {
-			grecaptcha.render('div-recap', {
-			  'sitekey' : '6Lf-R0QUAAAAAP5Dl3AtIqFj4zFfHtu0Anm-vyuJ'
-			});
-		};
+		
 	</script>
 </head>
 <body class="container">
@@ -66,8 +62,13 @@
 					console.log("some error occored", data);
 				}
 			});
-			
 		});
+		
+		var onloadCallback = function() {
+			grecaptcha.render('div-recap', {
+			  'sitekey' : '6Lf-R0QUAAAAAP5Dl3AtIqFj4zFfHtu0Anm-vyuJ'
+			});
+		};
 	</script>
 	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit">
 		async defer
