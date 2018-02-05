@@ -84,12 +84,12 @@
 		});
 		
 		var onloadCallback = function() {
-			grecaptcha.render('div-recap', {
-			  'sitekey' : '6Lf-R0QUAAAAAP5Dl3AtIqFj4zFfHtu0Anm-vyuJ', 'expired-callback': expCallback()
+			var expire = grecaptcha.render('div-recap', {
+			  'sitekey' : '6Lf-R0QUAAAAAP5Dl3AtIqFj4zFfHtu0Anm-vyuJ', 'expired-callback': expCallback(expire)
 			});
 		};
-		var expCallback = function() {
-          grecaptcha.reset();
+		var expCallback = function(expire) {
+          grecaptcha.reset(expire);
        };
 	</script>
 	
