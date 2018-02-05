@@ -47,7 +47,7 @@
 		$("#recap").submit(function(e){
 			$.ajax({
 				type: "post",
-				url: $("form").attr('action');
+				url: $("form").attr('action'),
 				data: $("form").serialize(),
 				success: function(response){
 					$("#result").html(response);
