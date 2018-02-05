@@ -23,7 +23,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg alert alert-success alert-dismiss" role="alert" id="result">
+				<div class="col-lg alert alert-dismiss" role="alert" id="result">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -80,8 +80,10 @@
 				data: $("form").serialize(),
 				success: function(response){
 					$("#result").html(response);
+					$("#result").addClass('alert-success');
 				},
 				error: function(data){
+					$("#result").addClass('alert-danger');
 					console.log("some error occored", data);
 				}
 			});
