@@ -9,8 +9,15 @@
 	<button type="button">Hide</button>
 	<div id="resposta"></div>
 	<input type="button" id="json" value="Get JSON"/>
+	<hr/>
+	<h3>Submiting form with recaptcha</h3>
+	<form method="post" action="">
+		<div class="g-recaptcha" data-sitekey="6Lf-R0QUAAAAAP5Dl3AtIqFj4zFfHtu0Anm-vyuJ"></div>
+		<input type="submit" value="Submit"/>
+	</form>
 	<script type="text/javascript" src="scripts/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+	<script type="text/javascript" src='https://www.google.com/recaptcha/api.js?hl=pt-BR'></script>
 	<script type="text/javascript">
 		var hiddenBox = $("#banner-message");
 		$("button").on("click", function(event){
