@@ -1,9 +1,10 @@
+<!doctype html>
 <html>
 <head>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<title>Publishing</title>
 </head>
-<body>
+<body class="container">
 	<h1>Publishing website via github</h1>
 	<div id="banner-message">Some div</div>
 	<button type="button">Hide</button>
@@ -45,7 +46,7 @@
 		});
 		
 		$("#recap").submit(function(e){
-			e.preventDefault();
+			//e.preventDefault();
 			$.ajax({
 				type: "post",
 				url: $("form").attr('action'),
