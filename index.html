@@ -5,6 +5,15 @@
 	<title>Publishing</title>
 </head>
 <body class="container">
+
+	<div class="container border">
+		<div class="text-primary">
+			Acessando site usando: <span id="user-agent"></span>
+		</div>
+	</div>
+
+	<hr class="border border-white"/>
+	
 	<div class="container border">
 		<h1>Publishing website via github</h1>
 		<div id="banner-message">Some div</div>
@@ -45,6 +54,8 @@
 		async defer
 	</script>
 	<script type="text/javascript">
+		document.getElementById("user-agent").innerHTML = navigator.userAgent;
+	
 		var hiddenBox = $("#banner-message");
 		$("button").on("click", function(event){
 			hiddenBox.show();
